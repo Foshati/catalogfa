@@ -1,0 +1,12 @@
+.header {
+    background-image: url('../../assets/images/header-food.jpg');
+    display: flex;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+
+
+
+}
