@@ -1,29 +1,39 @@
 import { useEffect, useState } from "react";
 import axios from "../../axios";
 
+import Loading from "../Loading/loading";
+
 const CategoryList = () => {
+  const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     const fetchCategories = async () => {
       const response = await axios.get("/FoodCategory/categories");
       setCategories(response.data);
+      setLoading(false);
     };
     fetchCategories();
   }, []);
 
-  return (
-    <nav className="max-w-6xl p-4 mx-auto -mt-8 bg-red-200 navbar rounded-xl">
-      <div>
-        <ul className="flex flex-row-reverse justify-around">
-          <a href="">همه محصولات</a>
+  const renderContent = () => {
+    if (loading) {
+      return <Loading />;
+    }
+    return (
+      <ul className="flex flex-row-reverse justify-around">
+        <a href="">همه محصولات</a>
+        {categories.map((category) => (
+          <li key={category.id}>
+            <a>{category.name}</a>
+          </li>
+        ))}
+      </ul>
+    );
+  };
 
-          {categories.map((category) => (
-            <li key={category.id}>
-              <a>{category.name}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
+  return (
+    <nav className="max-w-6xl p-4 mx-auto -mt-8 bg-red-300 rounded-xl">
+      <div>{renderContent()}</div>
     </nav>
   );
 };
