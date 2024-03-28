@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: { custom: ["Noto Sans Arabic"] },
+      fontFamily: { Noto: ["Noto Sans Arabic"] },
     },
   },
   plugins: [require("daisyui")],
