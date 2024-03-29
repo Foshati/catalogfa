@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../../axios";
 
 import Loading from "../Loading/loading";
-
+// FoodCategory/categories =>ENDPOINT_API
 const CategoryList = () => {
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
