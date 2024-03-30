@@ -34,7 +34,7 @@ function App() {
 
   return (
     <main className="font-sans font-Noto">
-      <Header />
+      <Header  />
       <CategoryList />
       <div>{renderContent()}</div>
     </main>

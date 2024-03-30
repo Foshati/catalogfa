@@ -32,9 +32,11 @@ const CategoryList = () => {
   };
 
   return (
-    <nav className="max-w-6xl p-4 mx-auto -mt-8 bg-red-300 rounded-xl">
-      <div>{renderContent()}</div>
-    </nav>
+    <div className="mx-8 mb-4">
+      <nav className="max-w-6xl p-4 mx-auto -mt-8 bg-red-300 rounded-xl ">
+        <div>{renderContent()}</div>
+      </nav>
+    </div>
   );
 };
 
