@@ -1,9 +1,9 @@
 import { CiShoppingTag } from "react-icons/ci";
-
+import "./fastFoodItem.css";
 export const FastFoodItem = ({ name, price, ingredients, imageUrl }) => {
   return (
     <div className="flex flex-col shadow-xl card card-compact w-96 bg-base-100">
-      <figure>
+      <figure className="card__placeholder">
         <img src={imageUrl} alt="img" />
       </figure>
       <div className="flex flex-col items-center justify-between text-center card-body">

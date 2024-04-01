@@ -32,10 +32,14 @@ function App() {
     return <FastFoodLists fastFoodItems={fastFoodItems} />;
   };
 
+  const filterItems = (categoryId) => {
+    fetchData(categoryId);
+  };
+
   return (
     <main className="font-sans font-Noto">
-      <Header  />
-      <CategoryList />
+      <Header />
+      <CategoryList filterItems={filterItems} />
       <div>{renderContent()}</div>
     </main>
   );
