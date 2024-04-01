@@ -14,7 +14,16 @@ function App() {
   const fetchData = async (categoryId = null) => {
     setLoading(true);
     const response = await axios.get(
-      `FastFood/list/${categoryId ? "?categoryId=" + categoryId : ""}`
+      `/FastFood/list/${categoryId ? "?categoryId=" + categoryId : ""}`
+    );
+    setLoading(false);
+    setFastFoodItems(response.data);
+  };
+
+  const searchItems = async (term) => {
+    setLoading(true);
+    const response = await axios.get(
+      `/FastFood/search/${term ? "?term=" + term : ""}`
     );
     setLoading(false);
     setFastFoodItems(response.data);
@@ -39,7 +48,7 @@ function App() {
   return (
     <main className="font-sans font-Noto">
       <Header />
-      <CategoryList filterItems={filterItems} />
+      <CategoryList filterItems={filterItems} searchItems={searchItems} />
       <div>{renderContent()}</div>
     </main>
   );

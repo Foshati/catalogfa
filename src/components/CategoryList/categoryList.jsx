@@ -6,10 +6,12 @@ import { CiSearch } from "react-icons/ci";
 
 import Loading from "../Loading/loading";
 // FoodCategory/categories =>ENDPOINT_API
-const CategoryList = ({ filterItems }) => {
+const CategoryList = ({ filterItems, searchItems }) => {
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
   const [show, setShow] = useState(false);
+  const [value, setValue] = useState("");
+
   useEffect(() => {
     const fetchCategories = async () => {
       const response = await axios.get("/FoodCategory/categories");
@@ -42,6 +44,11 @@ const CategoryList = ({ filterItems }) => {
     );
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    searchItems(value);
+  };
+
   return (
     <main>
       <div className="mx-8 mb-4 ">
@@ -56,13 +63,15 @@ const CategoryList = ({ filterItems }) => {
         </nav>
       </div>
       {show ? (
-        <div className="m-2 form-control">
+        <form onSubmit={onSubmit} className="m-2 form-control">
           <input
             type="text"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
             placeholder="جستجو ..."
             className="w-24 input input-bordered md:w-auto input__rtl"
           />
-        </div>
+        </form>
       ) : (
         ""
       )}
