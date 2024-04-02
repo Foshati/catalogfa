@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "../../axios";
+import axiosApi from "../../Services/Axios/configs";
 
 import "./categoryList.css";
 import { CiSearch } from "react-icons/ci";
@@ -14,7 +14,7 @@ const CategoryList = ({ filterItems, searchItems }) => {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const response = await axios.get("/FoodCategory/categories");
+      const response = await axiosApi.get("/FoodCategory/categories");
       setCategories(response.data);
       setLoading(false);
     };
