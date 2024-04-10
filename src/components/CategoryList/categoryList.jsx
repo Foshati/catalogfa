@@ -52,18 +52,18 @@ const CategoryList = ({ filterItems, searchItems }) => {
   return (
     <main>
       <div className="mx-8 mb-4 ">
-        <nav className="flex items-center justify-between max-w-6xl p-4 mx-auto -mt-8 bg-red-300 rounded-xl">
+        <nav className="flex items-center justify-between max-w-6xl p-4 mx-auto -mt-8 bg-[#500f1cf0] rounded-xl ">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
               type="checkbox"
               className="theme-controller"
-              value="synthwave"
+              value="sunset"
             />
 
             {/* sun icon */}
             <svg
-              className="h-10 text-black fill-current w-7 swap-off"
+              className="h-10 text-black fill-current w-7 swap-off hover:text-[#bc6604]"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -72,18 +72,18 @@ const CategoryList = ({ filterItems, searchItems }) => {
 
             {/* moon icon */}
             <svg
-              className="w-6 h-10 text-black fill-current swap-on"
+              className="w-6 h-10 text-black fill-current swap-on hover:text-[#bc6604]"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
               <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
             </svg>
           </label>
+
           <span>
-            {" "}
             {/* search */}
             <IoSearch
-              className="text-2xl text-black cursor-pointer hover:text-red-700 "
+              className="text-2xl cursor-pointer hover:text-[#bc6604] "
               onClick={() => {
                 setShow(!show);
               }}
@@ -101,7 +101,7 @@ const CategoryList = ({ filterItems, searchItems }) => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder="جستجو ..."
-            className="w-24 input input-bordered md:w-auto input__rtl"
+            className="w-24 text-[#9ba3af] input input-bordered md:w-auto input__rtl"
           />
         </form>
       ) : (

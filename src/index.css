@@ -20,13 +20,14 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #211103;
 
 
 }
 
 body {
   overflow: auto;
+  color: black;
+
 }
 
 a {
@@ -36,6 +37,6 @@ a {
 }
 
 a:hover {
-  color: #dc2626;
+  color: #bc6604;
   cursor: pointer;
 }
